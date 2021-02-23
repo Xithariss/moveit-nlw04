@@ -20,7 +20,12 @@ export function Countdown() {
     }, [active, time]);
 
     function startCountdown() {
-        setActive(true);
+        setActive(!active);
+    }
+
+    function resetCycle() {
+        setActive(false);
+        setTime(25 * 60);
     }
 
     return (
@@ -37,9 +42,15 @@ export function Countdown() {
                 </div>
             </div>
 
-            <button type="button" className={styles.countdownButton} onClick={startCountdown}>
-                Iniciar um ciclo
-            </button>
+            <div className={styles.buttonsContainer}>
+                <button type="button" className={styles.countdownButton} onClick={startCountdown}>
+                    {active ? "Parar ciclo" : "Iniciar ciclo"}
+                </button>
+
+                <button type="button" className={styles.resetButton} onClick={resetCycle}>
+                    <img src="icons/reset.svg" alt="Zerar ciclo"/>
+                </button>
+            </div>
         </div>
     );
 }

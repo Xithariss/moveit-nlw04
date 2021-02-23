@@ -36,11 +36,17 @@
     margin: 0 0.5rem;
 }
 
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
 .countdownButton {
-    width: 100%;
+    width: 80%;
     height: 5rem;
 
     margin-top: 2rem;
+    margin-right: 0.5rem;
 
     display: flex;
     align-items: center;
@@ -58,4 +64,29 @@
 
 .countdownButton:hover {
     background: var(--blue-dark);
+}
+
+.resetButton {
+    width: 20%;
+    height: 5rem;
+
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 5px;
+    background: var(--background);
+
+    transition: background-color 0.2s;
+}
+
+.resetButton:hover {
+    background: var(--gray-line);
+}
+
+.resetButton img {
+    width: 50%;
 }
